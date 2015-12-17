@@ -7,7 +7,7 @@ setup(
     author='Leon Koens',
     author_email='pypi@leonkoens.nl',
     url='https://github.com/leonkoens/run_shell_command',
-    download_url='https://github.com/peterldowns/mypackage/tarball/0.1',
+    download_url='https://github.com/leonkoens/run_shell_command/tarball/1.0',
     keywords=['shell', 'command', 'bash', 'subprocess'],
     classifiers=[],
 )
