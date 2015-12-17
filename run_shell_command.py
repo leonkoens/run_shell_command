@@ -5,7 +5,7 @@ import shlex
 
 
 def run_shell_command(command, format_args=None, returncode=False):
-    """Run a shell string asif it was run from bash. This supports piping"""
+    """Run a shell string as if it was run from bash. This supports piping"""
 
     if format_args is not None:
         # Escape arguments for format.
