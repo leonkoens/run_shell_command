@@ -4,7 +4,7 @@ import subprocess
 import shlex
 
 
-def run_shell_command(command, format_args=None, returncode=False):
+def run_shell_command(command, format_args=None, format_kwargs=None, returncode=False):
     """Run a shell string as if it was run from bash. This supports piping"""
 
     if format_args is not None:
@@ -12,6 +12,12 @@ def run_shell_command(command, format_args=None, returncode=False):
         format_args = [pipes.quote(str(arg)) for arg in format_args]
         # pylint: disable=star-args
         command = command.format(*format_args)
+
+    if format_kwargs is not None:
+        # Escape arguments for format.
+        format_kwargs_keys = format_kwargs.keys()
+        format_kwargs_values = [pipes.quote(str(arg)) for arg in format_kwargs.values()]
+        format_kwargs = dict(itertools.izip(format_kwargs_keys, format_kwargs_values))
 
     logging.debug(command)
 
