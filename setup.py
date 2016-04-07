@@ -3,7 +3,7 @@ setup(
     name='run_shell_command',
     packages=['run_shell_command'],
     version='1.0',
-    description='Execute bash commands from python',
+    description='Execute shell commands from python',
     author='Leon Koens',
     author_email='pypi@leonkoens.nl',
     url='https://github.com/leonkoens/run_shell_command',
