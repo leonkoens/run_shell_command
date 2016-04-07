@@ -5,7 +5,7 @@ import shlex
 import subprocess
 
 
-def run_shell_command(command, format_args=None, format_kwargs=None, returncode=False):
+def run_shell_command(command, format_args=None, format_kwargs=None, returncode=False, pipe_split=None):
     """Run a shell string as if it was run from bash. This supports piping"""
 
     if format_args is not None:
@@ -21,6 +21,9 @@ def run_shell_command(command, format_args=None, format_kwargs=None, returncode=
         format_kwargs = dict(itertools.izip(format_kwargs_keys, format_kwargs_values))
 
     logging.debug(command)
+
+    if pipe_split is None or type(pipe_split) not in [str, unicode]:
+        pipe_split = "|"
 
     commands = [cmd.strip() for cmd in command.split('|')]
 
