@@ -1,7 +1,8 @@
+import itertools
 import logging
 import pipes
-import subprocess
 import shlex
+import subprocess
 
 
 def run_shell_command(command, format_args=None, format_kwargs=None, returncode=False):
