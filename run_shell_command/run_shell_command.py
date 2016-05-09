@@ -25,7 +25,7 @@ def run_shell_command(command, format_args=None, format_kwargs=None, returncode=
     if pipe_split is None or type(pipe_split) not in [str, unicode]:
         pipe_split = "|"
 
-    commands = [cmd.strip() for cmd in command.split('|')]
+    commands = [cmd.strip() for cmd in command.split(pipe_split)]
 
     prevous_process = None
     process_list = []
